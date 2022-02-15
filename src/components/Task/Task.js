@@ -2,10 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import {
-  removeTaskAction,
-  toggleTaskAction,
-} from "../../redux/actions/actionCreators";
+
 import {
   getRemoveTaskThunk,
   getToggleTaskThunk,
@@ -76,7 +73,7 @@ const Task = ({ task }) => {
   };
 
   const toggleTask = () => {
-    dispatch(getToggleTaskThunk(task.id));
+    dispatch(getToggleTaskThunk(task.compleated, task.id));
   };
 
   return (
