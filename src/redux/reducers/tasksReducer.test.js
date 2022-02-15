@@ -9,13 +9,13 @@ describe("Given tasksReducer", () => {
       {
         id: 1,
         name: "Task 1",
-        dueDate: Date.now(),
+        dueDate: "Date.now()",
         compleated: false,
       },
       {
         id: 2,
         name: "Task 2",
-        dueDate: Date.now(),
+        dueDate: "Date.now()",
         compleated: false,
       },
     ];
@@ -37,19 +37,19 @@ describe("Given tasksReducer", () => {
         {
           id: 3,
           name: "Task 3",
-          dueDate: Date.now(),
+          dueDate: "Date.now()",
           compleated: false,
         },
         {
           id: 4,
           name: "Task 4",
-          dueDate: Date.now(),
+          dueDate: "Date.now()",
           compleated: false,
         },
         {
           id: 5,
           name: "Task 5",
-          dueDate: Date.now(),
+          dueDate: "Date.now()",
           compleated: false,
         },
       ];
@@ -72,7 +72,7 @@ describe("Given tasksReducer", () => {
       const task = {
         id: 3,
         name: "Task 3",
-        dueDate: Date.now(),
+        dueDate: "Date.now()",
         compleated: false,
       };
 
@@ -102,7 +102,7 @@ describe("Given tasksReducer", () => {
         {
           id: 1,
           name: "Task 1",
-          dueDate: Date.now(),
+          dueDate: "Date.now()",
           compleated: false,
         },
       ];
@@ -126,13 +126,13 @@ describe("Given tasksReducer", () => {
         {
           id: 1,
           name: "Task 1",
-          dueDate: Date.now(),
+          dueDate: "Date.now()",
           compleated: false,
         },
         {
           id: 2,
           name: "Task 2",
-          dueDate: Date.now(),
+          dueDate: "Date.now()",
           compleated: true,
         },
       ];
