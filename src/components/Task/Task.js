@@ -61,7 +61,7 @@ const CompleteIcon = styled.div`
 const Task = ({ task }) => {
   return (
     <ListItem compleated={task.compleated}>
-      <CompleteIcon compleated={task.compleated}>
+      <CompleteIcon compleated={task.compleated} data-testId="compleated">
         <FontAwesomeIcon icon={faCircleCheck} />
       </CompleteIcon>
       <TaskName>{task.text}</TaskName>

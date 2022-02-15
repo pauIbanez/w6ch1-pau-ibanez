@@ -19,4 +19,38 @@ describe("Given Task", () => {
       expect(foundText).toBeInTheDocument();
     });
   });
+
+  describe("When it recieves a compleated task", () => {
+    test("Then it should display the checkmark", () => {
+      const testId = "compleated";
+      const task = {
+        text: "dfgdfsgafsadfa",
+        compleated: true,
+        id: 1,
+      };
+
+      render(<Task task={task} />);
+
+      const foundCheckMark = screen.getByTestId(testId);
+
+      expect(foundCheckMark).toBeVisible();
+    });
+  });
+
+  describe("When it recieves a not compleated task", () => {
+    test("Then it should not display the checkmark", () => {
+      const testId = "compleated";
+      const task = {
+        text: "dfgdfsgafsadfa",
+        compleated: false,
+        id: 1,
+      };
+
+      render(<Task task={task} />);
+
+      const foundCheckMark = screen.getByTestId(testId);
+
+      expect(foundCheckMark).not.toBeVisible();
+    });
+  });
 });
