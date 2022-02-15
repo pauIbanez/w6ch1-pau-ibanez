@@ -27,8 +27,13 @@ describe("Given TaskList", () => {
       const list = screen.getByRole("list");
       const tasksInScreen = screen.getAllByRole("listitem");
 
+      // const callBack = fakySelector.mock.calls[0][0];  index de llamada, index de argumento
+      // expect.any(loquesea)
+
       expect(list).toBeInTheDocument();
       expect(tasksInScreen.length).toBe(tasks.length);
+
+      expect(fakySelector).toHaveBeenCalledWith(expect.any(Function));
     });
   });
 });
