@@ -20,4 +20,32 @@ export const handlers = [
       ])
     )
   ),
+
+  rest.post(process.env.REACT_APP_API_URL, (req, res, ctx) =>
+    res(
+      ctx.status(201),
+      ctx.json({
+        id: 3,
+        name: "Task 3",
+        dueDate: "Date.now()",
+        compleated: false,
+      })
+    )
+  ),
+
+  rest.delete(`${process.env.REACT_APP_API_URL}3`, (req, res, ctx) =>
+    res(ctx.status(200), ctx.json({}))
+  ),
+
+  rest.patch(`${process.env.REACT_APP_API_URL}3`, (req, res, ctx) =>
+    res(
+      ctx.status(201),
+      ctx.json({
+        id: 3,
+        name: "Task 3",
+        dueDate: "Date.now()",
+        compleated: false,
+      })
+    )
+  ),
 ];
