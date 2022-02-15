@@ -3,7 +3,7 @@ import { loadTasksThunk } from "./thunks";
 
 describe("Given loadTasksThunk", () => {
   describe("When it is called", () => {
-    test("Then it should call dispatch passing a loadTasksAction", () => {
+    test("Then it should call dispatch passing a loadTasksAction", async () => {
       const tasks = [
         {
           id: 1,
@@ -26,7 +26,7 @@ describe("Given loadTasksThunk", () => {
 
       const mockDispatch = jest.fn();
 
-      loadTasksThunk(mockDispatch);
+      await loadTasksThunk(mockDispatch);
 
       expect(mockDispatch).toHaveBeenCalledWith(expectedAction);
     });
