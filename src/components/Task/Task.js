@@ -5,8 +5,8 @@ import styled from "styled-components";
 const padding = 50;
 
 const ListItem = styled.li`
-  background-color: #fffbf5;
   height: 50px;
+  position: relative;
 
   ${(props) => (props.compleated ? "color: #202020;" : "color: #5a5a5a;")}
 
