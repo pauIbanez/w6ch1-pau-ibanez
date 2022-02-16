@@ -9,4 +9,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fffbf5;
+  overflow-y: hidden;
+}
+
+#root {
+  height: 100vh;
 }

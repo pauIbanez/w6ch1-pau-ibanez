@@ -12,6 +12,7 @@ const PageTitle = styled.h1`
 
 const ListContainer = styled.div`
   display: flex;
+  height: 100%;
 `;
 
 function App() {
