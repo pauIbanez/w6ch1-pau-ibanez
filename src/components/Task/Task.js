@@ -1,6 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+
+import {
+  getRemoveTaskThunk,
+  getToggleTaskThunk,
+} from "../../redux/thunks/thunks";
 
 const padding = 50;
 
@@ -59,13 +65,24 @@ const CompleteIcon = styled.div`
 `;
 
 const Task = ({ task }) => {
+  const dispatch = useDispatch();
+
+  const removeTask = (event) => {
+    event.stopPropagation();
+    dispatch(getRemoveTaskThunk(task.id));
+  };
+
+  const toggleTask = () => {
+    dispatch(getToggleTaskThunk(task.compleated, task.id));
+  };
+
   return (
-    <ListItem compleated={task.compleated}>
+    <ListItem compleated={task.compleated} onClick={toggleTask}>
       <CompleteIcon compleated={task.compleated} data-testid="compleated">
         <FontAwesomeIcon icon={faCircleCheck} />
       </CompleteIcon>
       <TaskName>{task.text}</TaskName>
-      <DeleteButton>
+      <DeleteButton onClick={removeTask}>
         <FontAwesomeIcon icon={faTrashCan} />
       </DeleteButton>
     </ListItem>

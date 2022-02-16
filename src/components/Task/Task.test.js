@@ -1,4 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderInBocata } from "../../setupTests";
 import Task from "./Task";
 
 describe("Given Task", () => {
@@ -12,7 +13,7 @@ describe("Given Task", () => {
         id: 1,
       };
 
-      render(<Task task={task} />);
+      renderInBocata(<Task task={task} />);
 
       const foundText = screen.getByText(text);
 
@@ -29,7 +30,7 @@ describe("Given Task", () => {
         id: 1,
       };
 
-      render(<Task task={task} />);
+      renderInBocata(<Task task={task} />);
 
       const foundCheckMark = screen.getByTestId(testId);
 
@@ -46,7 +47,7 @@ describe("Given Task", () => {
         id: 1,
       };
 
-      render(<Task task={task} />);
+      renderInBocata(<Task task={task} />);
 
       const foundCheckMark = screen.getByTestId(testId);
 
