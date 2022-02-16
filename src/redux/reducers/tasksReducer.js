@@ -17,10 +17,14 @@ const tasksReducer = (currentTasks = [], action = {}) => {
       break;
 
     case actionTypes.toggleTask:
-      newTasks = currentTasks.map((task) => ({
-        ...task,
-        compleated: !task.compleated,
-      }));
+      newTasks = currentTasks.map((task) =>
+        task.id === action.id
+          ? {
+              ...task,
+              compleated: !task.compleated,
+            }
+          : { ...task }
+      );
       break;
 
     default:
