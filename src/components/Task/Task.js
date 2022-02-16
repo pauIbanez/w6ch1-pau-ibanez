@@ -82,7 +82,7 @@ const Task = ({ task }) => {
         <FontAwesomeIcon icon={faCircleCheck} />
       </CompleteIcon>
       <TaskName>{task.text}</TaskName>
-      <DeleteButton onClick={removeTask}>
+      <DeleteButton onClick={removeTask} data-testid="trash">
         <FontAwesomeIcon icon={faTrashCan} />
       </DeleteButton>
     </ListItem>
